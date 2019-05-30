@@ -11,6 +11,7 @@ from matplotlib import pyplot as plt
 from matplotlib.patches import Circle, Wedge, Shadow
 import math
 import numpy as np
+from IPython import display
 
 
 class Gauge():
