@@ -127,6 +127,14 @@ class Status:
         self.drawCircle()
         self.setText()
 
+        # Hide axes
+        self.ax.set_frame_on(False)
+        self.ax.axes.set_xticks([])
+        self.ax.axes.set_yticks([])
+
+        # makes scaling square
+        self.ax.axis('equal')
+
     def drawCircle(self):
         if self.value >= self.high:
             color='r'
@@ -139,9 +147,9 @@ class Status:
         self.ax.add_patch(self.indicator)
 
     def setText(self):
-        self.valText = self.ax.text(1, 0, '%.2f' % self.value, horizontalalignment='center',
-                                    #verticalalignment='top',
-                                     fontsize=28)
+        self.valText = self.ax.text(1, 0, '%.2f' % self.value, horizontalalignment='right',
+                                    verticalalignment='center',
+                                     fontsize=42)
 
     def set(self, value):
         if value!=self.value:
