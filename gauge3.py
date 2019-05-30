@@ -116,7 +116,40 @@ class Gauge():
                               facecolor=self.cmap(self.normalizer(value)), edgecolor='k', linewidth=.3)
         self.ax.add_patch(self.valWedge)
 
+class Status:
+    def __init__(self, mid, high, value):
+        self.mid=mid
+        self.high=high
+        self.value=value
 
+        self.fig, self.ax = plt.subplots()
+
+        self.drawCircle()
+        self.setText()
+
+    def drawCircle(self):
+        if self.value >= self.high:
+            color='r'
+        elif self.value>= self.mid:
+            color='y'
+        else:
+            color='g'
+
+        self.indicator = Circle((0,0), radius=1, color=color)
+        self.ax.add_patch(self.indicator)
+
+    def setText(self):
+        self.valText = self.ax.text(1, 0, '%.2f' % self.value, horizontalalignment='center',
+                                    #verticalalignment='top',
+                                     fontsize=28)
+
+    def set(self, value):
+        if value!=self.value:
+            self.valText.remove()
+            self.indicator.remove()
+
+            self.setText()
+            self.drawCircle()
 # import time
 # import random
 # from IPython import display
