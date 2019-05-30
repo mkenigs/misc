@@ -143,13 +143,13 @@ class Status:
         else:
             color='g'
 
-        self.indicator = Circle((0,0), radius=1, color=color)
+        self.indicator = Circle((0,0), radius=.1, color=color)
         self.ax.add_patch(self.indicator)
 
     def setText(self):
-        self.valText = self.ax.text(1, 0, '%.2f' % self.value, horizontalalignment='right',
+        self.valText = self.ax.text(1, 0, '%.2f' % self.value, horizontalalignment='left',
                                     verticalalignment='center',
-                                     fontsize=42)
+                                     fontsize=18)
 
     def set(self, value):
         if value!=self.value:
