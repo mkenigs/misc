@@ -116,14 +116,14 @@ class Gauge():
         self.ax.add_patch(self.valWedge)
 
 
-import time
-import random
-from IPython import display
-g=Gauge(0, 1000, 30, tickStep=100, title="mle_statsmover_executions_total", nWedges=10, colors='Wistia')
-while True:
+# import time
+# import random
+# from IPython import display
+# g=Gauge(0, 1000, 30, tickStep=100, title="mle_statsmover_executions_total", nWedges=10, colors='Wistia')
+# while True:
 
-#     queryResponse=prom.query('mle_statsmover_executions_total')
-#     newVal=float(queryResponse.json()['data']['result'][1]['value'][1])
-    g.set(random.uniform(.6*g.valEnd, .8*g.valEnd))
-#     display.clear_output(wait=True)
-    time.sleep(.4)
+# #     queryResponse=prom.query('mle_statsmover_executions_total')
+# #     newVal=float(queryResponse.json()['data']['result'][1]['value'][1])
+#     g.set(random.uniform(.6*g.valEnd, .8*g.valEnd))
+# #     display.clear_output(wait=True)
+#     time.sleep(.4)
